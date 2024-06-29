@@ -3,7 +3,7 @@ import UIKit
 import ScreenProtectorKit
 
 
-public class SwiftNoScreenshotPlugin: NSObject, FlutterPlugin {
+public class SwiftFlutterPreventScreenshotPlugin: NSObject, FlutterPlugin {
     private var screenProtectorKit: ScreenProtectorKit? = nil
     private static var channel: FlutterMethodChannel? = nil
     static private var preventScreenShot: Bool = false

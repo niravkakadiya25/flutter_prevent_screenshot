@@ -13,7 +13,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  final _noScreenshot = NoScreenshot.instance;
+  final _flutterPreventScreenshot = FlutterPreventScreenshot.instance;
 
   @override
   void initState() {
@@ -34,21 +34,21 @@ class _MyAppState extends State<MyApp> {
             ElevatedButton(
               child: const Text('Press to toggle screenshot'),
               onPressed: () async {
-                final result = await _noScreenshot.toggleScreenshot();
+                final result = await _flutterPreventScreenshot.toggleScreenshot();
                 print(result);
               },
             ),
             ElevatedButton(
               child: const Text('Press to turn off screenshot'),
               onPressed: () async {
-                final result = await _noScreenshot.screenshotOff();
+                final result = await _flutterPreventScreenshot.screenshotOff();
                 print(result);
               },
             ),
             ElevatedButton(
               child: const Text('Press to turn on screenshot'),
               onPressed: () async {
-                final result = await _noScreenshot.screenshotOn();
+                final result = await _flutterPreventScreenshot.screenshotOn();
                 print(result);
               },
             ),

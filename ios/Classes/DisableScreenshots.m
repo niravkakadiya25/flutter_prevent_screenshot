@@ -8,8 +8,8 @@
 #import "flutter_prevent_screenshot-Swift.h"
 #endif
 
-@implementation NoScreenshotPlugin
+@implementation FlutterPreventScreenshot
 + (void)registerWithRegistrar:(NSObject<FlutterPluginRegistrar>*)registrar {
-  [SwiftNoScreenshotPlugin registerWithRegistrar:registrar];
+  [SwiftFlutterPreventScreenshot registerWithRegistrar:registrar];
 }
 @end

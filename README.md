@@ -26,16 +26,16 @@ Compatible with both Android and iOS.
 Add the following dependency to your pubspec.yaml file:
 
 ```flutter
-flutter_prevent_screenshot: ^0.0.1+4
+flutter_prevent_screenshot: ^0.0.1+12
 import 'package:flutter_prevent_screenshot/flutter_prevent_screenshot.dart';
 ```
 
 ## Usage
 
 ```dart
-final _noScreenshot = NoScreenshot.instance;
+final _flutterPreventScreenshot = FlutterPreventScreenshot.instance;
 turnoffScreenshot() async {
-  final result = await _noScreenshot.screenshotOff();
+  final result = await _flutterPreventScreenshot.screenshotOff();
   if (kDebugMode) {
     print(result);
   }
@@ -49,7 +49,7 @@ void initState() {
 
 @override
 void dispose() {
-  _noScreenshot.screenshotOn();
+  _flutterPreventScreenshot.screenshotOn();
 
   super.dispose();
 }
