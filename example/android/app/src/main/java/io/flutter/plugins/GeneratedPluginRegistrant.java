@@ -16,9 +16,9 @@ public final class GeneratedPluginRegistrant {
   private static final String TAG = "GeneratedPluginRegistrant";
   public static void registerWith(@NonNull FlutterEngine flutterEngine) {
     try {
-      flutterEngine.getPlugins().add(new com.app_master.disable_screenshots.NoScreenshotPlugin());
+      flutterEngine.getPlugins().add(new com.app_master.disable_screenshots.FlutterPreventScreenshotPlugin());
     } catch (Exception e) {
-      Log.e(TAG, "Error registering plugin flutter_prevent_screenshot, com.app_master.disable_screenshots.NoScreenshotPlugin", e);
+      Log.e(TAG, "Error registering plugin flutter_prevent_screenshot, com.app_master.disable_screenshots.FlutterPreventScreenshotPlugin", e);
     }
   }
 }

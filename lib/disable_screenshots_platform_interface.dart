@@ -2,23 +2,23 @@ import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 
 import 'disable_screenshots_method_channel.dart';
 
-abstract class NoScreenshotPlatform extends PlatformInterface {
+abstract class FlutterPreventScreenshotPlatform extends PlatformInterface {
   /// Constructs a NoScreenshotPlatform.
-  NoScreenshotPlatform() : super(token: _token);
+  FlutterPreventScreenshotPlatform() : super(token: _token);
 
   static final Object _token = Object();
 
-  static NoScreenshotPlatform _instance = MethodChannelNoScreenshot();
+  static FlutterPreventScreenshotPlatform _instance = MethodChannelPreventScreenshot();
 
   /// The default instance of [NoScreenshotPlatform] to use.
   ///
   /// Defaults to [MethodChannelNoScreenshot].
-  static NoScreenshotPlatform get instance => _instance;
+  static FlutterPreventScreenshotPlatform get instance => _instance;
 
   /// Platform-specific implementations should set this with their own
   /// platform-specific class that extends [NoScreenshotPlatform] when
   /// they register themselves.
-  static set instance(NoScreenshotPlatform instance) {
+  static set instance(FlutterPreventScreenshotPlatform instance) {
     PlatformInterface.verifyToken(instance, _token);
     _instance = instance;
   }

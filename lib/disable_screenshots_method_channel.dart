@@ -4,8 +4,8 @@ import 'package:flutter/services.dart';
 import 'constants.dart';
 import 'disable_screenshots_platform_interface.dart';
 
-/// An implementation of [NoScreenshotPlatform] that uses method channels.
-class MethodChannelNoScreenshot extends NoScreenshotPlatform {
+/// An implementation of [PreventScreenshotPlatform] that uses method channels.
+class MethodChannelPreventScreenshot extends FlutterPreventScreenshotPlatform {
   /// The method channel used to interact with the native platform.
   @visibleForTesting
   final methodChannel =

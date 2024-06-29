@@ -2,13 +2,13 @@ library flutter_prevent_screenshot;
 
 import 'disable_screenshots_platform_interface.dart';
 
-class NoScreenshot implements NoScreenshotPlatform {
-  final _instancePlatform = NoScreenshotPlatform.instance;
+class FlutterPreventScreenshot implements FlutterPreventScreenshotPlatform {
+  final _instancePlatform = FlutterPreventScreenshotPlatform.instance;
 
-  NoScreenshot._();
+  FlutterPreventScreenshot._();
 
   /// Made `NoScreenshot` class a singleton
-  static NoScreenshot get instance => NoScreenshot._();
+  static FlutterPreventScreenshot get instance => FlutterPreventScreenshot._();
 
   /// Return `true` if screenshot capabilities has been successfully disabled
   /// or is currently disabled and `false` otherwise. throw `UnmimplementedError` if not implement

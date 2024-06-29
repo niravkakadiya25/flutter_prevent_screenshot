@@ -1,3 +1,7 @@
+## 0.0.1+12
+
+* change instance names
+ 
 ## 0.0.1+11
 
 * IOS build issue

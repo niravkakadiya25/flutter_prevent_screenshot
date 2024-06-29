@@ -1,6 +1,6 @@
 name: flutter_prevent_screenshot
 description: "flutter_prevent_screenshot prevents screenshots and screen recordings in Flutter apps on Android and iOS, ideal for protecting sensitive or confidential information."
-version: 0.0.1+11
+version: 0.0.1+12
 homepage: https://app-master.online
 repository: https://github.com/niravkakadiya25/flutter_prevent_screenshot/releases/tag/flutter_prevent_screenshot
 
@@ -30,9 +30,9 @@ flutter:
     platforms:
       android:
         package: com.app_master.disable_screenshots
-        pluginClass: NoScreenshotPlugin
+        pluginClass: FlutterPreventScreenshotPlugin
       ios:
-        pluginClass: NoScreenshotPlugin
+        pluginClass: FlutterPreventScreenshotPlugin
   # To add assets to your package, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg
