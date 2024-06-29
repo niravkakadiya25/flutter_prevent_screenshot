@@ -14,45 +14,45 @@ public class SwiftFlutterPreventScreenshotPlugin: NSObject, FlutterPlugin {
 
 
     public static func register(with registrar: FlutterPluginRegistrar) {
-        SwiftNoScreenshotPlugin.channel = FlutterMethodChannel(name: "com.app_master.disable_screenshots", binaryMessenger: registrar.messenger())
+        SwiftFlutterPreventScreenshotPlugin.channel = FlutterMethodChannel(name: "com.app_master.disable_screenshots", binaryMessenger: registrar.messenger())
         let window = UIApplication.shared.delegate?.window
 
         let screenProtectorKit = ScreenProtectorKit(window: window as? UIWindow)
         screenProtectorKit.configurePreventionScreenshot()
 
-        let instance = SwiftNoScreenshotPlugin(screenProtectorKit: screenProtectorKit)
-        registrar.addMethodCallDelegate(instance, channel: SwiftNoScreenshotPlugin.channel!)
+        let instance = SwiftFlutterPreventScreenshotPlugin(screenProtectorKit: screenProtectorKit)
+        registrar.addMethodCallDelegate(instance, channel: SwiftFlutterPreventScreenshotPlugin.channel!)
         registrar.addApplicationDelegate(instance)
     }
 
 
     public func applicationWillResignActive(_ application: UIApplication) {
-        if SwiftNoScreenshotPlugin.preventScreenShot == true {
+        if SwiftFlutterPreventScreenshotPlugin.preventScreenShot == true {
             screenProtectorKit?.enabledPreventScreenshot()
-        } else if SwiftNoScreenshotPlugin.preventScreenShot == false {
+        } else if SwiftFlutterPreventScreenshotPlugin.preventScreenShot == false {
             screenProtectorKit?.disablePreventScreenshot()
         }
     }
 
     public func applicationDidBecomeActive(_ application: UIApplication) {
-        if SwiftNoScreenshotPlugin.preventScreenShot == true {
+        if SwiftFlutterPreventScreenshotPlugin.preventScreenShot == true {
             screenProtectorKit?.enabledPreventScreenshot()
-        } else if SwiftNoScreenshotPlugin.preventScreenShot == false {
+        } else if SwiftFlutterPreventScreenshotPlugin.preventScreenShot == false {
             screenProtectorKit?.disablePreventScreenshot()
         }
     }
 
     public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
         if (call.method == "screenshotOff") {
-            SwiftNoScreenshotPlugin.preventScreenShot = false
+            SwiftFlutterPreventScreenshotPlugin.preventScreenShot = false
             shotOff()
 
         } else if (call.method == "screenshotOn") {
-            SwiftNoScreenshotPlugin.preventScreenShot = true
+            SwiftFlutterPreventScreenshotPlugin.preventScreenShot = true
             shotOn()
         } else if (call.method == "toggleScreenshot") {
-            SwiftNoScreenshotPlugin.preventScreenShot = !SwiftNoScreenshotPlugin.preventScreenShot;
-            SwiftNoScreenshotPlugin.preventScreenShot ? shotOn() : shotOff()
+            SwiftFlutterPreventScreenshotPlugin.preventScreenShot = !SwiftFlutterPreventScreenshotPlugin.preventScreenShot;
+            SwiftFlutterPreventScreenshotPlugin.preventScreenShot ? shotOn() : shotOff()
         }
         result(true)
     }
