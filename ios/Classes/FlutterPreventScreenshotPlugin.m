@@ -1,4 +1,4 @@
-#import "DisableScreenshotsPlugin.h"
+#import "FlutterPreventScreenshotPlugin.h"
 #if __has_include(<flutter_prevent_screenshot/flutter_prevent_screenshot-Swift.h>)
 #import <flutter_prevent_screenshot/flutter_prevent_screenshot-Swift.h>
 #else
@@ -8,8 +8,8 @@
 #import "flutter_prevent_screenshot-Swift.h"
 #endif
 
-@implementation FlutterPreventScreenshot
+@implementation FlutterPreventScreenshotPlugin
 + (void)registerWithRegistrar:(NSObject<FlutterPluginRegistrar>*)registrar {
-  [SwiftFlutterPreventScreenshot registerWithRegistrar:registrar];
+  [SwiftFlutterPreventScreenshotPlugin registerWithRegistrar:registrar];
 }
 @end
