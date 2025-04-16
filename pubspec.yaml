@@ -1,6 +1,6 @@
 name: flutter_prevent_screenshot
 description: "flutter_prevent_screenshot prevents screenshots and screen recordings in Flutter apps on Android and iOS, ideal for protecting sensitive or confidential information."
-version: 0.0.1+15
+version: 0.0.1+16
 homepage: https://app-master.online
 repository: https://github.com/niravkakadiya25/flutter_prevent_screenshot/releases/tag/flutter_prevent_screenshot
 
